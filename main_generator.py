@@ -23,7 +23,7 @@ def createNewService():
     file_name = str(input()) + ".service"
     if not os.path.isfile(working_dir + file_name):
         print(locale.error_exist)
-        break
+        return False
     print("Succeful!")
 
 if __name__ == "__main__":
