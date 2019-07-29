@@ -1,5 +1,6 @@
 import os
 import locale
+import sys
 
 working_dir = "/etc/systemd/system/"
 
