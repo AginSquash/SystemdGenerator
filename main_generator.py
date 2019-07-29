@@ -10,7 +10,7 @@ def check_root():
 
 def main():
     print(locale.hello_msg)
-    for True:
+    while True:
         if input() == '1':
             createNewService()
     #handle = open("/etc/systemd/system/test.service", "w")
