@@ -26,6 +26,11 @@ def createNewService():
         return False
     print("Succeful!")
 
+def test():
+    ans = os.access(working_dir, 2)
+    print(ans)
+
 if __name__ == "__main__":
-    check_root()
+    #check_root()
+    test()
     main()
