@@ -36,11 +36,14 @@ def createNewService():
     constructor.replace("%Descriptrion%", description)
     constructor.replace("%ExecStartPre%", execStartPre)
     constructor.replace("%ExecStart%", execStart)
-    file_name = working_dir + file_name
-    service_file = open(file_name, "w")
+    write_file = working_dir + file_name
+    service_file = open(write_file, "w")
     service_file.write(constructor)
     service_file.close()
     print(local.successful_create)
+    os.system("sudo systemctl start %s", file_name) #TODO CheckThis
+    print(local.isSuccesRun)
+    
     return True
 
 if __name__ == "__main__":
