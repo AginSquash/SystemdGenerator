@@ -43,7 +43,9 @@ def createNewService():
     print(local.successful_create)
     os.system("sudo systemctl start %s", file_name) #TODO CheckThis
     print(local.isSuccesRun)
-    
+    isOk = str( input() ).lower()
+    if isOk == "y":
+        os.system("sudo systemctl enable %s", file_name)
     return True
 
 if __name__ == "__main__":
