@@ -24,9 +24,9 @@ def createNewService():
     if os.path.isfile(working_dir + file_name):
         print(locale.error_exist)
         return False
-    print(locale.enter_description)
+    print(locale.Description)
     discription = str( input() )
-    print(locale.enter_ExecStartPre)
+    print(locale.ExecStartPre)
     execStartPre = str( input() )
     print(locale.ExecStart)
     execStart = str( input() )
