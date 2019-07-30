@@ -25,7 +25,9 @@ def createNewService():
         print(locale.error_exist)
         return False
     print(locale.Description)
-    discription = str( input() )
+    description = str( input() )
+    if description == None:
+        description = file_name
     print(locale.ExecStartPre)
     execStartPre = str( input() )
     print(locale.ExecStart)
