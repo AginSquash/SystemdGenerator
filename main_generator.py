@@ -12,7 +12,7 @@ def check_root():
 def main():
     print(locale.hello_msg)
     while True:
-        if input() == '1':
+        if ( str( input() ) == '1' ):
             createNewService()
     #handle = open("/etc/systemd/system/test.service", "w")
     #handle.write("This is a test!")
@@ -36,6 +36,12 @@ def createNewService():
     constructor.replace("%Descriptrion%", description)
     constructor.replace("%ExecStartPre%", execStartPre)
     constructor.replace("%ExecStart%", execStart)
+    file_name = working_dir + file_name
+    service_file = open(file_name, "w")
+    service_file.write(constructor)
+    service_file.close()
+    print(local.successful_create)
+    return True
 
 if __name__ == "__main__":
     check_root()
