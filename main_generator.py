@@ -32,7 +32,10 @@ def createNewService():
     execStartPre = str( input() )
     print(locale.ExecStart)
     execStart = str( input() )
-    
+    constructor = open("service_constructor.conf", "r")
+    constructor.replace("%Descriptrion%", description)
+    constructor.replace("%ExecStartPre%", execStartPre)
+    constructor.replace("%ExecStart%", execStart)
 
 if __name__ == "__main__":
     check_root()
