@@ -24,7 +24,13 @@ def createNewService():
     if os.path.isfile(working_dir + file_name):
         print(locale.error_exist)
         return False
-    print("Succeful!")
+    print(locale.enter_description)
+    discription = str( input() )
+    print(locale.enter_ExecStartPre)
+    execStartPre = str( input() )
+    print(locale.ExecStart)
+    execStart = str( input() )
+    
 
 if __name__ == "__main__":
     check_root()
