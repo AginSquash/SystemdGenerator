@@ -1,5 +1,5 @@
 
-hello_msg = "Hello!\n It's SystemMD Generator!/nFor new autorun file type '1'."
+hello_msg = "Hello!\nIt's SystemMD Generator!/nFor new autorun file type '1'."
 enter_new_name = "Enter name of you service-file (without '.service')"
 Description = "Enter description for process. (For default it will be name of service file):"
 ExecStartPre = "Enter command that will be run before main process (or skip this step):"

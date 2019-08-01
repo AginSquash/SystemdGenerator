@@ -14,9 +14,6 @@ def main():
     while True:
         if ( str( input() ) == '1' ):
             createNewService()
-    #handle = open("/etc/systemd/system/test.service", "w")
-    #handle.write("This is a test!")
-    #handle.close()
 
 def createNewService():
     print(locale.enter_new_name)
@@ -24,21 +21,20 @@ def createNewService():
     if os.path.isfile(working_dir + file_name):
         print(locale.error_exist)
         return False
+
     print(locale.Description)
     description = str( input() )
     if description == "":
         description = file_name
-    print(locale.ExecStartPre)
-    execStartPre = str( input() )
     print(locale.ExecStart)
     execStart = str( input() )
     if execStart == "":
         print(locale.error_execStart)
         return False
+
     constructor = open("service_constructor.conf", "r")
     constr_work = str(constructor.read())
     constr_work = constr_work.replace("%Description%", description)
-    constr_work = constr_work.replace("%ExecStartPre%", execStartPre)
     constr_work = constr_work.replace("%ExecStart%", execStart)
 
     write_file = working_dir + file_name
@@ -46,7 +42,8 @@ def createNewService():
     service_file.write(constr_work)
     service_file.close()
     print(locale.successful_create)
-    os.system("sudo systemctl start " + file_name) #TODO CheckThis
+
+    os.system("sudo systemctl start " + file_name)
     print(locale.isSuccesRun)
     isOk = str( input() ).lower()
     if isOk == "y":
