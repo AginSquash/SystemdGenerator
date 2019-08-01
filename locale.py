@@ -6,6 +6,7 @@ ExecStartPre = "Enter command that will be run before main process (or skip this
 ExecStart = "Enter main process command:"
 successful_create = "Successful creating service!"
 isSuccesRun = "Is process successful running? (Y/n):"
+working_dir = "Enter working directory (non required but recommend for Python-scripts):"
 
 #Errors
 error_root = "You need root permissions to run this!"

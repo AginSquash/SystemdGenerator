@@ -26,6 +26,10 @@ def createNewService():
     description = str( input() )
     if description == "":
         description = file_name
+
+    print(locale.working_dir)
+    work_d = str( input() )
+
     print(locale.ExecStart)
     execStart = str( input() )
     if execStart == "":
@@ -35,6 +39,7 @@ def createNewService():
     constructor = open("service_constructor.conf", "r")
     constr_work = str(constructor.read())
     constr_work = constr_work.replace("%Description%", description)
+    constr_work = constr_work.replace("%WorkingDirectory%", work_d)
     constr_work = constr_work.replace("%ExecStart%", execStart)
 
     write_file = working_dir + file_name
