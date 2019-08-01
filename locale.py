@@ -8,7 +8,7 @@ ExecStart = "Enter main process command:"
 successful_create = "Successful creating service!"
 isSuccesRun = "Is process successful running? (Y/n):"
 working_dir = "Enter working directory (non required but recommend for Python-scripts):"
-
+successful_autorun = 'If above you see the "Created symlink /etc/systemd/system" means the startup has been successfully configured'
 
 end = "--------------------------------------------------"
 

@@ -56,6 +56,7 @@ def createNewService():
     isOk = str( input() ).lower()
     if isOk == "y":
         os.system("sudo systemctl enable " + file_name)
+        print(locale.successful_autorun)
     return True
 
 if __name__ == "__main__":
