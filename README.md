@@ -3,4 +3,4 @@ With this simple program, you can quickly and easily create startup scripts/appl
 
 > Note, in some Linux distributions you have to specify the absolute path to each of the elements.
 Example:
-Use "`/usr/bin/python3 /home/user_name/test.py`" instead of "`python /home/user_name/test.py`"
+Use `/usr/bin/python3 /home/user_name/test.py` instead of `python /home/user_name/test.py`
