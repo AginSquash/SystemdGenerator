@@ -10,15 +10,18 @@ def check_root():
         sys.exit(1)
 
 def main():
-    print(locale.hello_msg)
+    print(locale.end)
+    print(locale.hello_msg)   
     while True:
+        print(locale.start_msg)
         if ( str( input() ) == '1' ):
             createNewService()
+        print(locale.end)
 
 def createNewService():
     print(locale.enter_new_name)
     file_name = str(input()) + ".service"
-    if os.path.isfile(working_dir + file_name):
+    if os.path.isfile(working_dir + file_name) or file_name == ".service":
         print(locale.error_exist)
         return False
 
