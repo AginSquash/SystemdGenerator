@@ -26,26 +26,31 @@ def createNewService():
         return False
     print(locale.Description)
     description = str( input() )
-    if description == None:
+    if description == "":
         description = file_name
     print(locale.ExecStartPre)
     execStartPre = str( input() )
     print(locale.ExecStart)
     execStart = str( input() )
+    if execStart == "":
+        print(locale.error_execStart)
+        return False
     constructor = open("service_constructor.conf", "r")
-    constructor.replace("%Descriptrion%", description)
-    constructor.replace("%ExecStartPre%", execStartPre)
-    constructor.replace("%ExecStart%", execStart)
+    constr_work = str(constructor.read())
+    constr_work = constr_work.replace("%Description%", description)
+    constr_work = constr_work.replace("%ExecStartPre%", execStartPre)
+    constr_work = constr_work.replace("%ExecStart%", execStart)
+
     write_file = working_dir + file_name
     service_file = open(write_file, "w")
-    service_file.write(constructor)
+    service_file.write(constr_work)
     service_file.close()
-    print(local.successful_create)
-    os.system("sudo systemctl start %s", file_name) #TODO CheckThis
-    print(local.isSuccesRun)
+    print(locale.successful_create)
+    os.system("sudo systemctl start " + file_name) #TODO CheckThis
+    print(locale.isSuccesRun)
     isOk = str( input() ).lower()
     if isOk == "y":
-        os.system("sudo systemctl enable %s", file_name)
+        os.system("sudo systemctl enable " + file_name)
     return True
 
 if __name__ == "__main__":

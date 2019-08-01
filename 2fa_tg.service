@@ -1,0 +1,11 @@
+[Unit]
+Description=2FA Bot for TG
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=sh /home/agins/server/2fa_tg.sh
+
+[Install]
+WantedBy=multi-user.target
+
